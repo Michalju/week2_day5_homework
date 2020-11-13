@@ -2,6 +2,7 @@ class Room:
     def __init__(self, name):
         self.name = name
         self._guests = []
+        self._songs = []
 
     # This method return guest by name 
     def find_guest_by_name(self,name):
@@ -17,10 +18,13 @@ class Room:
     # This method checks out from the room either:
     # a single named person
     # or
-    # all guests if name is ""
-    
+    # all guests if name is ""    
     def check_out(self, name):
         if not name:
             self._guests.clear()
         else:
             self._guests.remove(self.find_guest_by_name(name))
+
+    # This method checks in a guest to the room
+    def add_song(self, song):
+        self._songs.append(song)

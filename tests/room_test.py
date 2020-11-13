@@ -55,3 +55,21 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(len(self.rooms["Metal"]._guests), 1)
         self.assertEqual(self.rooms["Metal"]._guests[0].name, "James Hetfield")
 
+    def test_room_add_songs(self):
+        # adding songs to a room
+        self.assertEqual(len(self.rooms["Shite"]._songs), 0) 
+        self.assertEqual(len(self.rooms["Rock&Roll"]._songs), 0) 
+        self.assertEqual(len(self.rooms["Metal"]._songs), 0) 
+
+        self.rooms["Shite"].add_song(Song("Nothing But Thieves", "Particles"))
+        self.rooms["Shite"].add_song(Song("Nothing But Thieves", "Amsterdam"))
+
+        self.rooms["Rock&Roll"].add_song(Song("AC/DC", "Highway To Hell"))
+
+        self.rooms["Metal"].add_song(Song("Metallica", "Baterry"))
+        self.rooms["Metal"].add_song(Song("Metallica", "Seek And Destroy"))
+        self.rooms["Metal"].add_song(Song("Slipknot", "Unsainted"))
+
+        self.assertEqual(len(self.rooms["Shite"]._songs), 2) 
+        self.assertEqual(len(self.rooms["Rock&Roll"]._songs), 1) 
+        self.assertEqual(len(self.rooms["Metal"]._songs), 3)             

@@ -15,7 +15,7 @@ class TestGuest(unittest.TestCase):
             "AngusYoung" : Guest("Angus Young")            # 6
         }
     def test_room_name(self):
-        # check that room name is created correctly
+        # check that the guest is created correctly
         self.assertEqual(self.guests["DonaldTrump"].name, "Donald Trump")
         self.assertEqual(self.guests["VladimirPutin"].name, "Vladimir Putin")
         self.assertEqual(self.guests["BrianScott"].name, "Brian Scott")  

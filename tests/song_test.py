@@ -6,7 +6,7 @@ from classes.song import Song
 class TestSong(unittest.TestCase):
     def setUp(self):
         self.songs = {
-            "NBT_Impossible": Song("Nothing But Thieves", "Impossible"),
+            "NBT_Particles": Song("Nothing But Thieves", "Particles"),
             "NBT_Amsterdam": Song("Nothing But Thieves", "Amsterdam"),
             "ACDC_HighwayToHell": Song("AC/DC", "Highway To Hell"),
             "ACDC_TNT": Song("AC/DC", "TNT"),
@@ -19,8 +19,8 @@ class TestSong(unittest.TestCase):
         }
 
     def test_room_name(self):
-        # check that room name is created correctly
-        self.assertEqual(self.songs["NBT_Impossible"].artist, "Nothing But Thieves")
-        self.assertEqual(self.songs["NBT_Impossible"].title, "Impossible")       
+        # check that song is created correctly
+        self.assertEqual(self.songs["NBT_Particles"].artist, "Nothing But Thieves")
+        self.assertEqual(self.songs["NBT_Particles"].title, "Particles")       
         self.assertEqual(self.songs["Metallica_RideTheLighting"].artist, "Metallica")
         self.assertEqual(self.songs["Metallica_RideTheLighting"].title, "Ride The Lighting")
